@@ -1,7 +1,6 @@
 show databases;
 use film_library;
 
-drop table customer_details;
 create table if not exists customer_details(
 id varchar(10) not null primary key,
 first_name varchar(20) not null,
@@ -13,7 +12,6 @@ create table genre_details(
 genre_id varchar(10) not null primary key,
 genre varchar(30) not null);
 
-drop table films;
 create table films(
 id varchar (5) not null primary key,
 film_name varchar(100) not null, 
@@ -23,7 +21,6 @@ film_summary text (1000) not null,
 runtime time, 
 age_rating varchar (10) not null);
 
-drop table film_rank;
 create table if not exists film_rank(
 id varchar(10) not null primary key,
 source_name varchar(100),
@@ -39,7 +36,6 @@ foreign key(rank_4) references films(id),
 foreign key(rank_5) references films(id),
 web_source varchar(200));
 
-drop table loaned_items;
 create table loaned_items(
 id int not null primary key auto_increment,
 item_id varchar(10) not null,
